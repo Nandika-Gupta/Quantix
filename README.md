@@ -4,22 +4,22 @@ Quantix is a premium, institutional-grade, full-stack investment portfolio manag
 
 ---
 
-## 🚀 Overview
+##  Overview
 
 Quantix operates as a unified platform supporting multi-user registration, secure JWT session encryption, interactive historical quote analysis, and asset-allocation modeling. Leveraging React 19, Express, Tailwind CSS, Recharts, and official `@google/genai` SDK integrations, Quantix creates a high-performance workspace to track asset valuations, inspect concentration risk ratings, compare security metrics side-by-side, and export ready-to-print markdown financial audits.
 
 ---
 
-## ✨ Features
+##  Features
 
-- **🌐 Connected Market Intelligence Dashboard**: Instant ticker evaluations (e.g., AAPL, MSFT, NVIDIA, TSLA) presenting real-time price changes, annual volumes, P/E ratios, and 52-week position range charts.
-- **📈 Interactive Historical Time-Series Visualizer**: Fully responsive vector area charts powered by `recharts`, allowing users to cycle through varying time ranges (`30/90/180/365` days) to gauge systematic momentum.
-- **💼 Multi-Asset Portfolio Manager**: Advanced purchase matrix with automated dollar-weighted cost-average metrics, sector allocation mappings, and portfolio percentage weight calculators.
-- **🛡️ Quantitative Risk Analysis Engine**: Automated calibration of weighted portfolio Beta coefficients and a custom 100-point Risk Score rating (Conservative, Moderate, Aggressive, Special Speculative) representing individual asset volatility relative to standard indices.
-- **⚖️ Side-by-Side Equities Comparator**: Side-by-side spec comparison of up to 5 securities covering macro cap scales, valuation premiums (P/E multiples), beta coefficients, and sectors.
-- **🤖 Gemini Generative AI Advisor**: Deep financial reports, risk rebalancing advise, and double/triple comparative asset verdicts utilizing the fast, secure, and data-dense `gemini-3.5-flash` model.
-- **📑 Portable Markdown Financial Audit Export**: Instant on-the-fly markdown document printing containing full portfolio totals, active position weights, and risk parameters prepared for standard downloads.
-- **💻 Integrated Developers API Specifications**: Active REST route specification panels mapping JSON payloads, JWT token security boundaries, average response times (<15ms), and specifications for programmatic developers.
+- ** Connected Market Intelligence Dashboard**: Instant ticker evaluations (e.g., AAPL, MSFT, NVIDIA, TSLA) presenting real-time price changes, annual volumes, P/E ratios, and 52-week position range charts.
+- ** Interactive Historical Time-Series Visualizer**: Fully responsive vector area charts powered by `recharts`, allowing users to cycle through varying time ranges (`30/90/180/365` days) to gauge systematic momentum.
+- ** Multi-Asset Portfolio Manager**: Advanced purchase matrix with automated dollar-weighted cost-average metrics, sector allocation mappings, and portfolio percentage weight calculators.
+- ** Quantitative Risk Analysis Engine**: Automated calibration of weighted portfolio Beta coefficients and a custom 100-point Risk Score rating (Conservative, Moderate, Aggressive, Special Speculative) representing individual asset volatility relative to standard indices.
+- ** Side-by-Side Equities Comparator**: Side-by-side spec comparison of up to 5 securities covering macro cap scales, valuation premiums (P/E multiples), beta coefficients, and sectors.
+- ** Gemini Generative AI Advisor**: Deep financial reports, risk rebalancing advise, and double/triple comparative asset verdicts utilizing the fast, secure, and data-dense `gemini-3.5-flash` model.
+- ** Portable Markdown Financial Audit Export**: Instant on-the-fly markdown document printing containing full portfolio totals, active position weights, and risk parameters prepared for standard downloads.
+- ** Integrated Developers API Specifications**: Active REST route specification panels mapping JSON payloads, JWT token security boundaries, average response times (<15ms), and specifications for programmatic developers.
 
 ---
 
@@ -203,103 +203,7 @@ npm run start
 
 ---
 
-## 📡 API Endpoints Reference
 
-### 1. Profile Security
-- **`POST /api/auth/register`**: Creates defensive owner credentials and registers a workspace.
-  - *Payload*: `{ "name": "Name", "email": "user@example.com", "password": "password123" }`
-- **`POST /api/auth/login`**: Authenticates user and responds with a bearer token.
-  - *Payload*: `{ "email": "user@example.com", "password": "password123" }`
-- **`GET /api/auth/me`***: Decrypts JWT and returns current owner profile metadata.
-
-### 2. Market Capital Metrics
-- **`GET /api/stocks/:ticker`**: Grabs real-time price change factors, P/E ratios, beta risk, volume, and sector descriptions.
-- **`GET /api/stocks/:ticker/history`**: Fetches daily price-points for chart rendering.
-  - *Query Params*: `?points=30` (Accepts values between 1 and 365)
-- **`POST /api/stocks/compare`**: Compares details of multiple tickers.
-  - *Payload*: `{ "tickers": ["AAPL", "MSFT", "TSLA"] }` (Max 5 tickers)
-
-### 3. Secured Portfolios
-- **`GET /api/portfolio`***: Grabs your portfolio’s composition, asset weights, and systematic health metrics.
-- **`POST /api/portfolio`***: Adds an asset holding.
-  - *Payload*: `{ "ticker": "NVIDIA", "shares": 25, "buyPrice": 128.5 }`
-- **`PUT /api/portfolio/:id`***: Updates the share count or purchase average of a specific holding.
-  - *Payload*: `{ "shares": 30, "buyPrice": 125.0 }`
-- **`DELETE /api/portfolio/:id`***: Deletes a holding from your portfolio.
-
-### 4. Generative AI Pipeline
-- **`POST /api/ai/analyze`***: Generates fundamental stock analysis leveraging defined user focus.
-  - *Payload*: `{ "ticker": "AAPL", "query": "Is Apple’s valuation too steep given their current P/E multiple?" }`
-- **`POST /api/ai/compare`***: Performs side-by-side asset rebalancing reviews on selected assets.
-  - *Payload*: `{ "tickers": ["AMZN", "META"] }`
-- **`GET /api/portfolio/optimize`***: Reviews overall portfolio asset metrics and recommends sector rebalancing.
-- **`GET /api/portfolio/report`***: Assembles and downloads a completed PDF/Markdown report of current asset health.
-
-### 5. Utilities
-- **`GET /api/specs`**: Swagger-style manifest used by the Developers tab.
-- **`GET /api/history`***: Lists log archives of previous AI analyses.
-
-*\* Requires passing `Authorization: Bearer <JWT_TOKEN>` in request headers.*
-
----
-
-## 🗄️ Database Schema Representation
-
-The file-backed custom JSON database structure maintains persistent collections formatted as follows:
-
-```json
-{
-  "users": [
-    {
-      "id": "e7b8a7f9c",
-      "email": "analyst@quantix.com",
-      "name": "Alex Mercer",
-      "passwordHash": "$2a$10$hashed_password_string_using_bcrypt_rounds",
-      "createdAt": "2026-06-13T17:19:02.000Z"
-    }
-  ],
-  "holdings": [
-    {
-      "id": "j9d8f3k2",
-      "userId": "e7b8a7f9c",
-      "ticker": "AAPL",
-      "shares": 10.5,
-      "buyPrice": 178.4,
-      "buyDate": "2026-06-13"
-    }
-  ],
-  "analyses": [
-    {
-      "id": "n8m7v6x5",
-      "userId": "e7b8a7f9c",
-      "ticker": "AAPL",
-      "query": "Growth Prospects Review",
-      "analysis": "### Executive Summary & Financial Audit...",
-      "createdAt": "2026-06-13T17:21:00.000Z"
-    }
-  ]
-}
-```
-
----
-
-## 🤖 Generative AI Pipeline Flow
-
-Quantix orchestrates structured data streams into targeted prompt coordinates before querying the Google Gemini 3.5 Flash model:
-
-### 1. Ingestion Stage
-Data is ingested from internal endpoints, extracting current stock values, Beta indicators, 52-week pricing envelopes, and specific context queries submitted by the user.
-
-### 2. Context Prompt Conditioning
-Data is fed into strict, pre-compiled institutional system templates:
-- **Single Stock Analyst Prompt**: Configures the model as a professional Wall Street portfolio manager, instructing it to analyze valuation margins and technical momentum while structuring outputs with custom Markdown headers.
-- **Portfolio Optimizer Prompt**: Aggregates total holdings value, weighted portfolio beta indices, risk scores, sector percentages, and concentration ratios, requesting structured steps to reduce exposure limits.
-
-### 3. Execution & Failure Prevention
-- **API Call**: Initiates non-blocking async generation.
-- **Graceful Heuristic Fallback**: If `GEMINI_API_KEY` is not provided or fails due to network limitations, Quantix’s mock-intelligence model takes over. This fallback system uses the mock financial definitions in `aiService.ts` to output deterministic, mathematically precise data reports, maintaining complete system availability.
-
----
 
 ## 🖼️ User Interface Sections
 
@@ -336,19 +240,3 @@ docker run -d \
 ```
 
 ---
-
-## 📈 Future System Improvements
-
-1. **Relational PostgreSQL Integration**: Scale the database layer to PostgreSQL via cloud SQL or Supabase using Prisma/Drizzle.
-2. **Real-time WebSockets Ingest**: Transition the mock stock data service to real-time Yahoo Finance or AlphaVantage streaming socket APIs for live market updates.
-3. **Multi-Factor Portfolio Beta Modeling**: Improve capital calculations to model historical covariant risks and modern correlation matrices.
-4. **OAuth Core Authentication Integration**: Add Google, GitHub, or Okta Single Sign-On (SSO) login options.
-
----
-
-## 🤝 Contributing Guide
-
-1. **Fork the Repository** and clone your customized branch.
-2. **Ensure complete linter compliance** (`npm run lint`).
-3. **Execute standard smoke tests** (`npm run test`) to ensure portfolio calculation logic is preserved.
-4. **Document any API modifications** in the spec details inside `server.ts` to keep the developer redoc panel fully synchronized.
