@@ -12,13 +12,13 @@ Quantix operates as a unified platform supporting multi-user registration, secur
 
 ##  Features
 
-- Connected Market Intelligence Dashboard**: Instant ticker evaluations (e.g., AAPL, MSFT, NVIDIA, TSLA) presenting real-time price changes, annual volumes, P/E ratios, and 52-week position range charts.
-- Interactive Historical Time-Series Visualizer**: Fully responsive vector area charts powered by `recharts`, allowing users to cycle through varying time ranges (`30/90/180/365` days) to gauge systematic momentum.
-- Multi-Asset Portfolio Manager**: Advanced purchase matrix with automated dollar-weighted cost-average metrics, sector allocation mappings, and portfolio percentage weight calculators.
-- Quantitative Risk Analysis Engine**: Automated calibration of weighted portfolio Beta coefficients and a custom 100-point Risk Score rating (Conservative, Moderate, Aggressive, Special Speculative) representing individual asset volatility relative to standard indices.
-- Side-by-Side Equities Comparator**: Side-by-side spec comparison of up to 5 securities covering macro cap scales, valuation premiums (P/E multiples), beta coefficients, and sectors.
-- Portable Markdown Financial Audit Export**: Instant on-the-fly markdown document printing containing full portfolio totals, active position weights, and risk parameters prepared for standard downloads.
-- Integrated Developers API Specifications**: Active REST route specification panels mapping JSON payloads, JWT token security boundaries, average response times (<15ms), and specifications for programmatic developers.
+- Connected Market Intelligence Dashboard: Instant ticker evaluations (e.g., AAPL, MSFT, TSLA) presenting real-time price changes, annual volumes, P/E ratios, and 52-week position range charts.
+- Interactive Historical Time-Series Visualizer: Fully responsive vector area charts powered by `recharts`, allowing users to cycle through varying time ranges (`30/90/180/365` days) to gauge systematic momentum.
+- Multi-Asset Portfolio Manager: Advanced purchase matrix with automated dollar-weighted cost-average metrics, sector allocation mappings, and portfolio percentage weight calculators.
+- Quantitative Risk Analysis Engine: Automated calibration of weighted portfolio Beta coefficients and a custom 100-point Risk Score rating (Conservative, Moderate, Aggressive, Special Speculative) representing individual asset volatility relative to standard indices.
+- Side-by-Side Equities Comparator: Side-by-side spec comparison of up to 5 securities covering macro cap scales, valuation premiums (P/E multiples), beta coefficients, and sectors.
+- Portable Markdown Financial Audit Export: Instant on-the-fly markdown document printing containing full portfolio totals, active position weights, and risk parameters prepared for standard downloads.
+- Integrated Developers API Specifications: Active REST route specification panels mapping JSON payloads, JWT token security boundaries, average response times (<15ms), and specifications for programmatic developers.
 
 ---
 
