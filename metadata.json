@@ -1,0 +1,6 @@
+{
+  "name": "Quantix AI Financial Analytics & Portfolio Platform",
+  "description": "Premium Full-Stack Capital Assets Portfolio Manager with comprehensive risk ratings, systematic beta calibrations, and generative rebalancing advisors driven by Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
