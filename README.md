@@ -90,46 +90,6 @@ Quantix operates as a unified platform supporting multi-user registration, secur
                +--------------+     +----------+   +------------------+
 ```
 
-1. **Development Layer**: In local development, the Express server boots Vite in `middlewareMode` with HMR disabled per container controls. This allows a single Express process to serve Hot API endpoints while routing asset bundles to standard browsers.
-2. **Production Layer**: A multi-stage Docker builder compiles the React frontend assets into `dist/`. Esbuild packages `server.ts` into a self-contained CJS bundle in `dist/server.cjs`, allowing Node to execute server routing without file system overhead.
-
----
-
-## 📁 Folder Structure
-
-```
-quantix-platform/
-├── dist/                          # Production Compiled Output Assets
-│   ├── index.html                 # Minified SPA entrance
-│   ├── assets/                    # Compiled JS/CSS bundles
-│   └── server.cjs                 # Self-contained bundled Express Server Code
-├── src/
-│   ├── App.tsx                    # Main App Controller with central state management
-│   ├── main.tsx                   # Client Mount Configuration
-│   ├── index.css                  # Global Tailwind imports
-│   ├── types.ts                   # Centralized model interfaces and enums
-│   ├── components/                # Client UI Components
-│   │   ├── AuthPage.tsx           # JWT Sign-up & Login Interface
-│   │   ├── Dashboard.tsx          # Analytical search & AI advisor query engine
-│   │   ├── Portfolio.tsx          # Holding controller & total totals dashboard
-│   │   ├── Analytics.tsx          # Recharts concentric risk/beta charts
-│   │   ├── Comparison.tsx         # Multiple assets head-to-head metrics
-│   │   ├── ApiDocs.tsx            # Swagger-style REST specs panel
-│   │   └── HistoryLogs.tsx        # Previously logged AI review archives
-│   └── server/                    # Core Server Modules
-│       ├── db.ts                  # File-based database service with synchronous persistence
-│       ├── stockService.ts        # Algorithmic stock models and quantitative algebra
-│       └── aiService.ts           # Google Gemini API connector with fallback systems
-├── tests/
-│   └── smoke.test.ts              # Automated model testing suite
-├── server.ts                      # Full-Stack entry point (Express, Vite proxy, JWT gates)
-├── package.json                   # Project scripts and library dependency maps
-├── tsconfig.json                  # Compiler configuration
-├── vite.config.ts                 # React dev/build packaging guidelines
-├── Dockerfile                     # Optimized production multi-stage build instructions
-├── metadata.json                  # Sandbox configurations
-└── .env.example                   # Prototype configuration template
-```
 
 ---
 
@@ -205,7 +165,7 @@ npm run start
 
 
 
-## 🖼️ User Interface Sections
+##  User Interface Sections
 
 - **Market Dashboard**: Features an interactive search bar, trending ticker shortcuts, responsive Recharts area graphs displaying pricing history, and the Gemini expert query module.
 - **My Portfolio**: Evaluates total asset valuation, cost bases, net profits/losses, sector definitions, average cost figures, and triggers the AI rebalancing recommendations panel.
@@ -216,7 +176,7 @@ npm run start
 
 ---
 
-## 🐳 Deployment Guide
+##  Deployment Guide
 
 Quantix is ready for production hosting. To launch the platform inside isolated Docker runtimes:
 
