@@ -1,6 +1,6 @@
 # Quantix AI: Financial Analytics & Portfolio Platform
 
-Quantix is a premium, institutional-grade, full-stack investment portfolio manager and capital assets intelligence suite. It unites quantitative financial mathematics with advanced generative AI pipelines, presenting retail users with sophisticated analytics typically reserved for proprietary trading firms. Guided by systematic risk engines, Quantix calculates active correlation indices, industry allocations, beta coefficients, and delivers customized asset rebalancing recommendations powered by Google Gemini AI.
+Quantix is a premium, institutional-grade, full-stack investment portfolio manager and capital assets intelligence suite. It unites quantitative financial mathematics with advanced generative AI pipelines, presenting retail users with sophisticated analytics typically reserved for proprietary trading firms. Guided by systematic risk engines, Quantix calculates active correlation indices, industry allocations, beta coefficients, and delivers customized asset rebalancing recommendations.
 
 ---
 
@@ -23,42 +23,31 @@ Quantix operates as a unified platform supporting multi-user registration, secur
 
 ---
 
-## 🛠️ Complete Tech Stack
+## Complete Tech Stack
 
-### 1. Frontend Technologies
-- **UI & View Layer**: React 19 (TypeScript SPAs)
-- **Styling Architecture**: Tailwind CSS Integration (Vite-in-JS plugin compiling utility styles)
+### Frontend Technologies
+- **UI & View Layer**: React 19 
+- **Styling Architecture**: Tailwind CSS Integration
 - **Vector Graphics & UI Icons**: Lucide React
 - **Data Visualization & Charts**: Recharts & D3-scale utilities
 - **State Management**: Stable client React Context and localized secure local storage session trackers
-- **Motion & Transitions**: Motion (React Layout Animations)
+- **Motion & Transitions**: Motion
 
-### 2. Backend Technologies
+### Backend Technologies
 - **Execution Run-Time**: Node.js 22 LTS Alpine
 - **Server Framework**: Express (v4 with TypeScript runtime)
 - **Dev Runner**: TSX (direct execution of server TypeScript types)
-- **Compiler Bundling**: Esbuild (Bundles full server code into a production CJS module inside `/dist/server.cjs` to bypass native ES Module path errors)
+- **Compiler Bundling**: Esbuild 
 
-### 3. Database Technologies
+### Database Technologies
 - **Engine**: Local file-backed database layer (`data_db.json`)
 - **Control Rules**: Fully buffered cache memory schema writing sync JSON payloads on ACID-like operations (Users, Portfolios, AI Log records)
 
-### 4. AI/ML Technologies
-- **Cognitive Model Layer**: Google Gemini 3.5 Flash Model
-- **SDK Protocol**: Modern official `@google/genai` TypeScript SDK
-- **Integrations**: Custom context prompts parsing quantitative holding statistics, sector allocations, and customized stock metrics
-
-### 5. Deployment & DevOps
+###  Deployment & DevOps
 - **Containerization**: Multi-stage lightweight `Dockerfile` (separates compile builds from runtime packages to construct a highly minimized runner image)
 - **Reverse Proxy routing**: Configured for Cloud Run continuous deployment, binding automatically to ingress port `3000` on host `0.0.0.0`.
 
-### 6. Testing Framework
-- **Custom Suite**: Custom Smoke Verification Suite (`tests/smoke.test.ts`) utilizing `tsx` executing validation benchmarks:
-  - Deterministic stock price generator boundaries
-  - Asset-allocation algebraic math checks (WACC cost-basis, beta coefficients, risk ratings)
-  - Memory-DB CRUD transaction states and file-backed persistence accuracy
-
-### 7. Security Features
+### Security Features
 - **Session Protection**: JSON Web Tokens (JWT) using cryptographically signed headers
 - **Credential Safety**: Hashed user passwords leveraging `bcryptjs` with 10-rounds cryptographic salt indices
 - **Data Encapsulation**: Strictly decoupled API endpoints routing Gemini key configurations server-side (preventing environment credentials leak to user browsers)
